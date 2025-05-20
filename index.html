@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Comments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body class="bg-grey-50 text-grey-500 text-base">
+  <main>
+    <section class="comment__section px-4 py-6">
+      <form action="#" class="new-comment" aria-label="Post a new comment">
+        <label for="new_comment" class="sr-only">Add a comment</label>
+        <textarea class="new-comment__input border-grey-100" id="new_comment" name="new_comment"
+          placeholder="Add a comment..." rows="3" required></textarea>
+
+        <div class="new-comment__data">
+          <button class="new-comment__btn" id="submit">SEND</button>
+        </div>
+      </form>
+    </section>
+    <section id="deleteModal" class="comment-delete__section hidden bg-black/50" role="dialog" aria-modal="true">
+      <div class="comment__delete">
+        <h2 class="comment__delete-h2">Delete comment</h2>
+        <p class="comment__delete-warning">Are you sure you want to delete this comment? This will remove the comment
+          and
+          can't be undone.</p>
+        <div class="comment__delete-action">
+          <button class="delete-action__cancel bg-grey-500 hover:bg-grey-800 focus:bg-grey-800">NO, CANCEL</button>
+          <button class="delete-action__delete">YES, DELETE</button>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

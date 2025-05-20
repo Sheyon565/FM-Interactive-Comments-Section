@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@theme {
+    --color-purple-200: hsl(239, 57%, 85%);
+    --color-purple-600: hsl(238, 40%, 52%);
+    --color-pink-200: hsl(357, 100%, 86%);
+    --color-pink-400: hsl(358, 79%, 66%);
+
+    --color-grey-50: hsl(228, 33%, 97%);
+    --color-grey-100: hsl(223, 19%, 93%);
+    --color-grey-500: hsl(211, 10%, 45%);
+    --color-grey-800: hsl(212, 24%, 26%);
+    --color-white: hsl(0, 100%, 100%);
+
+    --font-weight-400: 400;
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply font-sans;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    main {
+        @apply md:flex md:flex-col md:items-center;
+    }
+}
+
+@layer components {
+    .comment__section {
+        @apply md:flex md:justify-center md:items-center md:flex-col md:max-w-[45rem];
+    }
+
+    .comment {
+        @apply my-4 md:mb-4 md:mt-0 w-full;
+    }
+
+    .comment__wrapper {
+        @apply md:order-2 relative w-full;
+    }
+
+    .comment__user {
+        @apply bg-white p-4 flex flex-wrap rounded-md justify-between sm:mb-2 md:flex-nowrap md:gap-4 md:mb-4;
+    }
+
+    .comment__replies {
+        @apply pl-4 border-l-2 md:pl-9 md:ml-8;
+    }
+
+    .comment__user-data {
+        @apply flex items-center mb-4;
+    }
+
+    .comment__data-avatar {
+        @apply w-9;
+    }
+
+    .comment__data-name {
+        @apply font-500 text-grey-800;
+    }
+
+    .comment__badge {
+        @apply text-white bg-purple-600 px-1.5 pt-0 pb-1 mr-4 rounded-xs text-xs block font-500;
+    }
+
+    .comment__text {
+        @apply mb-4 pr-0.5 w-full md:pr-2;
+    }
+
+    .comment__text-repliedTo {
+        @apply text-purple-600 font-700;
+    }
+
+    .comment__vote {
+        @apply flex bg-grey-100 px-2.5 py-2 rounded-lg w-max md:order-1 md:flex-col justify-between gap-4 items-center mb-4 md:max-h-[105px];
+    }
+
+    .comment__vote-btn {
+        @apply cursor-pointer text-purple-200 focus:text-purple-600 hover:text-purple-600;
+    }
+
+    .comment__vote-value {
+        @apply text-purple-600 font-500;
+    }
+
+    .comment__reply-btn {
+        @apply flex items-center p-2 gap-2 cursor-pointer pr-0;
+    }
+
+    .comment__reply-icon {
+        @apply fill-purple-600 group-hover:fill-purple-200 group-focus:fill-purple-200;
+    }
+
+    .comment__reply-text {
+        @apply text-purple-600 font-500 group-hover:text-purple-200 group-focus:text-purple-200;
+    }
+
+    .comment__action {
+        @apply flex items-center md:absolute md:right-0;
+    }
+
+    .comment__delete-btn {
+        @apply flex items-center p-2 gap-2 cursor-pointer;
+    }
+
+    .comment__delete-icon {
+        @apply fill-pink-400 group-hover:fill-pink-200 group-focus:fill-pink-200;
+    }
+
+    .comment__delete-text {
+        @apply text-pink-400 group-hover:text-pink-200 group-focus:text-pink-200 font-500;
+    }
+
+    .comment__edit-btn {
+        @apply flex items-center p-2 gap-2 cursor-pointer pr-0;
+    }
+
+    .comment__edit-icon {
+        @apply fill-purple-600 group-hover:fill-purple-200 group-focus:fill-purple-200
+    }
+
+    .comment__edit-text {
+        @apply text-purple-600 group-hover:text-purple-200 group-focus:text-purple-200 font-500;
+    }
+
+    .new-comment {
+        @apply p-4 bg-white mb-4 w-[100%] md:flex md:items-start md:gap-4;
+    }
+
+    .edit-comment {
+        @apply flex flex-col items-end;
+    }
+
+    .new-comment__input {
+        @apply border py-2 px-4 text-grey-800 w-full rounded-md mb-2 placeholder:font-500 font-400 min-h-fit md:order-2;
+    }
+
+    .new-comment__data {
+        @apply flex justify-between items-center md:contents;
+    }
+
+    .new-comment__avatar {
+        @apply h-10 md:order-1;
+    }
+
+    .new-comment__btn {
+        @apply bg-purple-600 text-white py-2 px-6 rounded-lg cursor-pointer font-500 md:order-3;
+    }
+
+    .comment-delete__section {
+        @apply fixed inset-0 flex justify-center items-center z-50;
+    }
+
+    .comment__delete {
+        @apply p-6 rounded-md bg-white max-w-[21.5rem];
+    }
+
+    .comment__delete-h2 {
+        @apply text-grey-800 font-500 mb-4 text-base text-xl;
+    }
+
+    .comment__delete-warning {
+        @apply mb-3;
+    }
+
+    .comment__delete-action {
+        @apply flex justify-between;
+    }
+
+    .delete-action__cancel {
+        @apply text-white p-2 px-6 rounded-md cursor-pointer;
+    }
+
+    .delete-action__delete {
+        @apply text-white bg-pink-400 px-6 rounded-md hover:bg-pink-200 focus:bg-pink-200 cursor-pointer;
+    }
+}
