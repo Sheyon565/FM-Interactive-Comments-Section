@@ -1,7 +1,7 @@
 import './styles/style.css';
 
 async function loadData() {
-    const res = await fetch('/data.json');
+    const res = await fetch(`${import.meta.env.BASE_URL}data.json`);
     const data = await res.json();
     const user = data.currentUser;
 
@@ -23,7 +23,7 @@ function renderComment(comments, user) {
 function createProfilePic(user) {
     const avatarImg = document.createElement('img');
     avatarImg.alt = `Avatar of ${user.username}`;
-    avatarImg.src = user.image.png;
+    avatarImg.src = `${import.meta.env.BASE_URL}${user.image.png}`;
     avatarImg.classList.add('new-comment__avatar');
     return avatarImg;
 }
@@ -42,7 +42,7 @@ function createCommentElement(comment, user) {
     userDataDiv.classList.add('comment__user-data');
 
     const userAvatar = document.createElement('img');
-    userAvatar.src = comment.user.image.png;
+    userAvatar.src = `${import.meta.env.BASE_URL}${comment.user.image.png}`;
     userAvatar.alt = `Avatar of ${comment.user.username}`;
     userAvatar.classList.add('comment__data-avatar');
     userDataDiv.appendChild(userAvatar);
